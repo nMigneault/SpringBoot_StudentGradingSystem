@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Système de notation</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+  </head>
+  <body>
+  <nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br />
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <hr/>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <hr/>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr />
+    <a href="logout">Déconnexion</a>
+  </nav>
+    <div class="main" align="center">
+      <h1>Institut Diplomatique de Montréal</h1>
+      <hr />
+      <h2>Modifer un étudiant</h2>
+      <br />
+      <form action="modifystudent" method="post">
+        <table class="list">
+
+        <input
+          type="hidden"
+          name="studentId"
+          th:attr="value=${studentToModify.studentId}"
+        />
+        <tr>
+          <td>Prénom</td>
+          <td><input
+            type="text"
+            name="firstName"
+            th:attr="value=${studentToModify.firstName}"
+          /></td>
+        </tr>
+        <tr>
+          <td>Nom de famille</td>
+          <td><input
+            type="text"
+            name="lastName"
+            th:attr="value=${studentToModify.lastName}"
+          /></td>
+        </tr>
+        <tr>
+          <td>Adresse</td>
+          <td><input
+            type="text"
+            name="address"
+            th:attr="value=${studentToModify.address}"
+          /></td>
+        </tr>
+        <tr>
+          <td>Ville</td>
+          <td><input
+            type="text"
+            name="city"
+            th:attr="value=${studentToModify.city}"
+          /></td>
+        </tr>
+        <tr>
+            <td style="border: none">&nbsp;</td>
+           <td style="border: none"><button type="submit">Modifier</button></td>
+        </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

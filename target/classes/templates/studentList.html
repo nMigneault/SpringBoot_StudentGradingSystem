@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Système de notation</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+
+<body>
+<nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br />
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr />
+    <a href="logout">Déconnexion</a>
+</nav>
+    <div class="main" align = "center">
+        <h1>Institut Diplomatique de Montréal</h1><hr>
+        <h2>Liste des étudiants</h2><br/>
+        <table class="list">
+            <thead align="Left">
+                <tr>
+                    <th>ID</th>
+                    <th>Prénom</th>
+                    <th>Nom de famille</th>
+                    <th>Adresse</th>
+                    <th>Ville</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr th:each="student : ${sl}">
+                        <td data-label="ID" th:text="${student.studentId}"></td>
+                        <td data-label="Prénom" th:text="${student.firstName}"></td>
+                        <td data-label="Nom de famille" th:text="${student.lastName}"></td>
+                        <td data-label="Adresse" th:text="${student.address}"></td>
+                        <td data-label="ville" th:text="${student.city}"></td>
+                        <td>
+                            <a th:href="@{/studentlist(x=${student.studentId}, act=modify)}">
+                                <button type="submit">Modifier</button>
+                            </a>
+                        </td>
+                        <td>
+                            <a th:href="@{/studentlist(x=${student.studentId}, act=delete)}">
+                                <button type="submit">Supprimer</button>
+                            </a>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

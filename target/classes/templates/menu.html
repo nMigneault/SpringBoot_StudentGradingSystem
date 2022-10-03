@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Système de notation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="sidenav">
+      <a onclick="location.href = 'menu'">Accueil</a><br />
+      <a href="addstudent">Ajouter un étudiant</a>
+      <a href="studentlist">Liste des étudiants</a>
+      <hr/>
+      <a href="addcourse">Ajouter un cours</a>
+      <a href="courselist">Liste des cours</a>
+      <hr/>
+      <a href="addgrade">Ajouter une note</a>
+      <a href="gradelist">Liste des notes</a>
+      <hr />
+      <a href="logout">Déconnexion</a>
+    </nav>
+    <div class="main" align="center">
+      <h1>Institut Diplomatique de Montréal</h1>
+      <hr />
+      <h2>Système de notation</h2>
+      <p>Veuillez choisir une option du menu</p>
+    </div>
+  </body>
+</html>

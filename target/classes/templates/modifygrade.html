@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Système de notation</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+</head>
+<body>
+<nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br />
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <hr/>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <hr/>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr />
+    <a href="logout">Déconnexion</a>
+</nav>
+<div class="main" align = "center">
+    <h1>Institut Diplomatique de Montréal</h1><hr/>
+    <h2>Modifier une note</h2>
+    <br/>
+            <form action="modifygrade" method="post">
+                <table class="list">
+                <input type="hidden" name="gradeId" value="${gradeToModify.gradeId}">
+                <tr>
+                    <td>Étudiant</td>
+                    <td><select name="studentChoice" id="studentChoice">
+                        <div th:each="student : ${sl}">
+                            <option th:if="${student.studentId} == ${s.studentId}" th:value="${student.studentId}"
+                                th:text="${student.firstName} + ' ' + ${student.lastName}" selected></option>
+                            <option th:if="${student.studentId} != ${s.studentId}" th:value="${student.studentId}"
+                                th:text="${student.firstName} + ' ' + ${student.lastName}"></option>
+                        </div>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cours</td>
+                    <td><select name="courseChoice" id="courseChoice">
+                        <div th:each="course : ${cl}">
+                            <option th:if="${course.courseId} == ${c.courseId}" th:value="${course.courseId}"
+                                th:text="${course.courseName}" selected></option>
+                            <option th:if="${course.courseId} != ${c.courseId}" th:value="${course.courseId}"
+                                th:text="${course.courseName}"></option>
+                        </div>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Note</td>
+                    <td><input type="text" name="mark" th:value="${gradeToModify.mark}"></td>
+                </tr>
+                    <tr>
+                        <td style="border: none"></td>
+                        <td style="border: none"><button type="submit">Modifier</button></td>
+                    </tr>
+                </table>
+            </form>
+    </div>
+</body>
+</html>

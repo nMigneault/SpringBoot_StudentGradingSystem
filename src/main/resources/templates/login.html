@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Système de notation</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet"/>
+</head>
+<body style="background-color: lightgray">
+<div class="sidenav"></div>
+<div class="main" align="center">
+    <h1>Institut Diplomatique de Montréal</h1>
+    <hr/>
+    <h2>Bienvenue</h2>
+    <form method="post">
+        <table>
+            <tbody>
+            <tr>
+                <td>Nom d'utilisateur</td>
+                <td><input
+                        type="text"
+                        name="username"
+                        placeholder="Nom d'utilisateur"
+                /></td>
+            </tr>
+            <tr>
+                <td><label>Mot de passe</label></td>
+                <td>
+                    <input
+                            type="password"
+                            name="password"
+                            placeholder="Mot de passe"
+                    /></td>
+            </tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="connexion"/></td>
+            </tbody>
+        </table>
+    </form>
+
+</div>
+<div align="center">
+    <p style="color: red" th:text="${msg}"></p>
+</div>
+</body>
+</html>

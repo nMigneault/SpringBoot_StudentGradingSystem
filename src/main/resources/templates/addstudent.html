@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Système de notation</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/styles/style.css}" rel="stylesheet" />
+  </head>
+  <body>
+  <nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br />
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <hr>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <hr>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr />
+    <a href="logout">Déconnexion</a>
+  </nav>
+
+    <div class="main" align="center">
+      <h1>Institut Diplomatique de Montréal</h1>
+      <hr />
+      <h2>Ajouter un étudiant</h2>
+      <br>
+      <form action="studentlist" method="post">
+        <table class="list">
+          <tr>
+            <td>Prénom</td>
+            <td><input type="text" name="firstName" placeholder="Entrez votre prénom" /></td>
+          </tr>
+          <tr>
+            <td>Nom de famille</td>
+            <td><input type="text" name="lastName" placeholder="Entrez votre nom" /></td>
+          </tr>
+          <tr>
+            <td>Adresse</td>
+            <td><input type="text" name="address" placeholder="Entrez votre adresse" /></td>
+          </tr>
+          <tr>
+            <td>Ville</td>
+            <td><input type="text" name="city" placeholder="Entrez votre la ville" /></td>
+          </tr>
+          <tr>
+            <td style="border: none">&nbsp;</td>
+            <td style="border: none"><button type="submit">Sauvegarder</button></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>

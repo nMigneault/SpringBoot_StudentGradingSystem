@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Système de notation</title>
+    <link th:href="@{/styles/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br/>
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <hr/>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <hr/>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr/>
+    <a href="logout">Déconnexion</a>
+</nav>
+<div class="main" align="center">
+    <h1>Institut Diplomatique de Montréal</h1>
+    <hr />
+    <h2>Modifer un cours</h2>
+    <br />
+    <form action="modifycourse" method="post">
+        <table class="list">
+            <input type="hidden" name="courseId" th:value="${courseToModify.courseId}">
+            <tr class="field">
+                <td>Cours</td>
+                <td><input type="text" name="courseName" th:value="${courseToModify.courseName}"></td>
+            </tr>
+            <tr>
+                <td>Credit</td>
+                <td><input type="number" name="creditNumber" th:value="${courseToModify.creditNumber}"></td>
+            </tr>
+            <tr>
+                <td style="border: none"></td>
+                <td style="border: none">
+                    <button type="submit">Modifier</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+
+</html>

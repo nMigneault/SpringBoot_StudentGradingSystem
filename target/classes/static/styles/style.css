@@ -1,0 +1,73 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Sep. 6, 2022, 8:34:09 a.m.
+    Author     : Eric Marquis 
+DA 9171475
+*/
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+hr {
+    border-top: 1px solid grey;
+    margin: 5px;
+}
+
+table.list {
+  width: 90%;
+  border-collapse: collapse;
+    font-size: smaller;
+}
+table.list tr td {
+  border: 1px solid lightgrey;
+}
+
+tbody{
+    border: none;
+}
+td.nav{
+    width: 90px;
+    text-align: center;
+}
+.sidenav {
+    height: 100%;
+    width: 210px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 210px;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}

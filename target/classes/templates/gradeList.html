@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Système de notation</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link th:href="@{/styles/style.css}" rel="stylesheet"/>
+</head>
+<body>
+<nav class="sidenav">
+    <a onclick="location.href = 'menu'">Accueil</a><br/>
+    <a href="addstudent">Ajouter un étudiant</a>
+    <a href="studentlist">Liste des étudiants</a>
+    <hr/>
+    <a href="addcourse">Ajouter un cours</a>
+    <a href="courselist">Liste des cours</a>
+    <hr/>
+    <a href="addgrade">Ajouter une note</a>
+    <a href="gradelist">Liste des notes</a>
+    <hr/>
+    <a href="logout">Déconnexion</a>
+</nav>
+<div class="main" align="center">
+    <h1>Institut Diplomatique de Montréal</h1>
+    <hr/>
+    <h2>Liste des notes</h2>
+    <br/>
+    <table class="list">
+        <thead>
+        <tr align="Left">
+            <th>ID</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Cours</th>
+            <th>Note</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="grade: ${gl}">
+            <td data-label="ID" th:text="${grade.gradeId}"></td>
+            <td data-label="Prénom" th:text="${grade.student.firstName}"></td>
+            <td date-label="Nom" th:text="${grade.student.lastName}"></td>
+            <td data-label="Cours" th:text="${grade.course.courseName}"></td>
+            <td data-label="Note" th:text="${grade.mark}"></td>
+            <td>
+                <a th:href="@{/gradelist(x=${grade.gradeId}, y=${grade.student.studentId}, z=${grade.course.courseId}, act=modify)}">
+                    <button type="submit">Modifier</button>
+                </a>
+            </td>
+            <td>
+                <a th:href="@{/gradelist(x=${grade.gradeId}, act=delete)}">
+                    <button type="submit">Supprimer</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

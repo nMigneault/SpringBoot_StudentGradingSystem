@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GradingsystemApplication<gradingsystem>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ca.ericmarquis.gradingsystem.GradingsystemApplication",
+            "projectName": "gradingsystem",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
