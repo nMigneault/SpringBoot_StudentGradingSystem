@@ -2,7 +2,7 @@ Système de notation étudiant
 ============================
 Tomcat, java, jstl, servlet, oracle, html et javascrip, intégration avec Spring Web MVC framework.
 
-Projet scolaire, équipe de 2
+Projet scolaire, équipe de 2 (avec Eric Marquis)
 
 Description
 -----------
